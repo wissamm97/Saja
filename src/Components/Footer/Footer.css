@@ -1,0 +1,70 @@
+.footer-area {
+  padding-top: 35px;
+  padding-bottom: 40px;
+  background: #282828;
+  font-family: "DINNextLTW23-Regular";
+}
+footer .to-top {
+  background-color: #86a3b8;
+  text-align: center;
+  width: 80px;
+  position: relative;
+  height: 80px;
+  line-height: 5;
+  clip-path: polygon(
+    50% 0%,
+    90% 20%,
+    100% 60%,
+    75% 100%,
+    25% 100%,
+    0% 60%,
+    10% 20%
+  );
+  top: -82px;
+  right: 50%;
+  cursor: pointer;
+}
+footer .to-top svg {
+  font-size: 3rem;
+}
+.footer-area .footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -35px;
+}
+.footer-area .footer .text-footer {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+}
+.footer-area .footer .bank-icon {
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
+.footer-area .footer .bank-icon .icons,
+.footer-area .footer .social-icon .icons {
+  justify-content: space-evenly;
+}
+.footer-area .footer .bank-icon svg,
+.footer-area .footer .social-icon svg {
+  color: #fff;
+  transition: 0.3s;
+}
+.footer-area .footer .bank-icon svg:hover,
+.footer-area .footer .social-icon svg:hover {
+  color: #86a3b8;
+}
+@media only screen and (max-width: 500px) {
+  .footer-area .footer {
+    gap: 30px;
+    text-align: center;
+  }
+  .footer-area .footer .bank-icon {
+    border-left: none;
+    border-right: none;
+  }
+  footer .to-top {
+    transform: translateX(38px);
+  }
+}

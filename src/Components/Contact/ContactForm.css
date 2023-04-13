@@ -1,0 +1,58 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+}
+.form .form-group {
+  position: relative;
+  margin-bottom: 2rem;
+  display: flex;
+  width: 100%;
+  justify-content: end;
+  border: 1px solid #ccc;
+}
+.form .form-group input,
+.form .form-group textarea {
+  width: 90%;
+  padding: 10px 5px;
+  border: none;
+}
+.form .form-group input::placeholder,
+.form .form-group textarea::placeholder {
+  transition: 0.3s;
+  opacity: 1;
+}
+.form .form-group input:focus,
+.form .form-group textarea:focus {
+  outline: none;
+}
+.form .form-group input:focus::placeholder,
+.form .form-group textarea:focus::placeholder {
+  outline: none;
+  opacity: 0;
+}
+.form .form-group textarea {
+  resize: none;
+}
+.form .form-group svg {
+  position: absolute;
+  right: 8px;
+  font-size: 2rem;
+  top: 8px;
+  color: #86a3b8;
+}
+.form .submit {
+  display: inline-block;
+  text-align: left;
+  margin-bottom: 10px;
+}
+.form .submit button {
+  border: none;
+  background-color: #86a3b8;
+  border-radius: 35px;
+  font-weight: bold;
+  color: #fff;
+  font-size: 1rem;
+  padding: 12px 30px;
+}

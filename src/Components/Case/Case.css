@@ -1,0 +1,35 @@
+.btn-case {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem;
+}
+.case {
+  display: block;
+  border: none;
+  font-weight: bold;
+  font-size: 2rem;
+  padding: 20px 4rem;
+  border-radius: 37px;
+  text-align: center;
+  margin: auto;
+  justify-content: center;
+  transition: 0.6s;
+  box-shadow: 0px 0px 3px 9px rgba(230, 247, 247, 1);
+  -webkit-box-shadow: 0px 0px 3px 9px rgba(230, 247, 247, 1);
+  -moz-box-shadow: 0px 0px 3px 9px rgba(230, 247, 247, 1);
+}
+.case.disabled {
+  background-color: #86a3b8;
+  color: #fff;
+}
+.case:not(.disabled) {
+  background-color: #fff;
+  color: #86a3b8;
+}
+@media only screen and (max-width: 500px) {
+  .btn-case {
+    flex-direction: column;
+    gap: 30px;
+  }
+}

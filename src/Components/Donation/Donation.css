@@ -1,0 +1,118 @@
+.donation {
+  padding: 2px 11px;
+  position: fixed;
+  width: 296px;
+  border-bottom-left-radius: 39px;
+  border-top-left-radius: 39px;
+  z-index: 9999;
+  top: 34%;
+  right: 50%;
+  transform: translate(150%, 37%);
+  transition: 1s all;
+}
+
+.donation .title {
+  font-weight: bold;
+  position: fixed;
+  background-color: #84a49f;
+  width: 100%;
+  top: 0;
+  right: 0;
+  padding: 10px 6px;
+  transform: translate(81%, 0);
+  color: #fff;
+  border-top-left-radius: 25px;
+  font-size: 22px;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+}
+.donation .donation-info {
+  background-color: #eee;
+  color: #777;
+  font-weight: bolder;
+  font-size: 1.5rem;
+  margin-top: 50px;
+  transition: 1s all;
+  position: fixed;
+  transform: translate(84.5%, 0);
+  display: none;
+  width: 100%;
+  padding: 10px;
+  border-bottom-left-radius: 25px;
+}
+.donation .donation-info.show {
+  display: block;
+}
+.donation .donation-info p {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+.donation .donation-info .vis-icon {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.donation .donation-info .vis-icon div {
+  font-size: 3rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.donation .donation-info .vis-icon div:hover {
+  color: #84a49f;
+}
+.donation .donation-info .text {
+  font-size: 1rem;
+}
+.donation .donation-info .text span {
+  margin-bottom: 8px;
+  display: block;
+}
+.donation .donation-info .form-group {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border: 1px solid #86a3b8;
+  border-radius: 30px;
+  background-color: #fff;
+}
+.donation .donation-info .gift {
+  background-color: #86a3b8;
+  padding: 8px 15px;
+  color: #fff;
+  font-size: 1.2rem;
+  border-radius: 50px;
+}
+.donation .donation-info .gift svg {
+  margin-left: 10px;
+}
+.donation .donation-info .text .form-group input {
+  width: 150px;
+  position: relative;
+  top: 0px;
+  border: none;
+}
+.donation .donation-info .text .form-group input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+@media only screen and (min-width: 200px) and (max-width: 500px) {
+  .donation {
+    right: 129%;
+  }
+  .donation .title {
+    transform: translate(40%, 0);
+  }
+  .donation .donation-info {
+    transform: translate(43%, 0);
+  }
+}
+@media only screen and (min-width: 700px) and (max-width: 900px) {
+  .donation .title {
+    transform: translate(51%, 0);
+  }
+  .donation .donation-info {
+    transform: translate(55%, 0);
+  }
+}

@@ -1,0 +1,54 @@
+.beneficiaries {
+  background-color: #eee;
+}
+.beneficiaries .other .benbox {
+  width: 50%;
+  position: relative;
+  transition: 0.3s;
+}
+.beneficiaries .other .benbox::before {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 4px;
+  background-color: #86a3b8;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: 0.3s;
+  border-radius: 11px;
+}
+.beneficiaries .other .benbox:hover {
+  transform: translateY(-8px);
+}
+.beneficiaries .other .benbox:hover::before {
+  width: 94%;
+}
+.beneficiaries .icon {
+  padding: 80px 30px;
+  background-color: #fff;
+  text-align: center;
+  padding: 80px 30px;
+  background-color: #fff;
+  text-align: center;
+  border-radius: 10px;
+}
+.beneficiaries .icon svg {
+  font-size: 8rem !important;
+  color: #6cf1c4;
+  margin: 15px 0;
+}
+.beneficiaries .icon .text {
+  font-size: 1rem;
+}
+.beneficiaries .icon p {
+  padding: 0;
+  font-weight: bold;
+  font-size: 2rem;
+}
+@media only screen and (max-width: 600px) {
+  .beneficiaries .other .benbox {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
