@@ -6,21 +6,21 @@ import CardCase from "./CardCase";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 function Case() {
-  const btn = useRef();
-  const full = useRef();
-  const handelClick = (e, el) => {
-    e.current.classList.toggle("disabled");
-    el.current.classList.toggle("disabled");
-  };
+  // const btn = useRef();
+  // const full = useRef();
+  // const handelClick = (e, el) => {
+  //   e.current.classList.toggle("disabled");
+  //   el.current.classList.toggle("disabled");
+  // };
   const dispatch = useDispatch();
   const { cases } = useSelector((state) => state.cases);
   useEffect(() => {
     dispatch(getAllCases());
   }, []);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   return (
-    <Container className="text-center">
-      <div className="btn-case">
+    <Container className="text-center p-4">
+      {/* <div className="btn-case">
         <button
           onClick={() => {
             handelClick(btn, full);
@@ -43,7 +43,7 @@ function Case() {
         >
           الحالات المكتملة
         </button>
-      </div>
+      </div> */}
       <CardCase cases={cases} />
     </Container>
   );

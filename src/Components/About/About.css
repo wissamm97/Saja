@@ -35,7 +35,7 @@ section {
   transition: 0.6s;
 }
 .row article:hover {
-  background-color: #86a3b8;
+  background-color: #205375;
 }
 .row article:hover svg {
   color: #fff;

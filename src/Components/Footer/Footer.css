@@ -5,7 +5,7 @@
   font-family: "DINNextLTW23-Regular";
 }
 footer .to-top {
-  background-color: #86a3b8;
+  background-color: #205375;
   text-align: center;
   width: 80px;
   position: relative;
@@ -26,6 +26,7 @@ footer .to-top {
 }
 footer .to-top svg {
   font-size: 3rem;
+  color: #ff8d11;
 }
 .footer-area .footer {
   display: flex;
@@ -53,7 +54,7 @@ footer .to-top svg {
 }
 .footer-area .footer .bank-icon svg:hover,
 .footer-area .footer .social-icon svg:hover {
-  color: #86a3b8;
+  color: #205375;
 }
 @media only screen and (max-width: 500px) {
   .footer-area .footer {

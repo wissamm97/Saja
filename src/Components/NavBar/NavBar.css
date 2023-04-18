@@ -6,7 +6,7 @@ nav {
   padding-bottom: 0;
 }
 .navbar-nav .nav-link {
-  background-color: #f48484;
+  background-color: #ff8d11;
   font-weight: bold;
   color: white !important;
   font-size: 17px;
@@ -18,7 +18,7 @@ nav {
 }
 .navbar-nav a.active,
 .navbar-nav a:hover {
-  background-color: #84a49f !important;
+  background-color: #205375 !important;
   color: white;
 }
 .nvcollap {
@@ -36,7 +36,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f48484;
+  background-color: #ff8d11;
   color: #fff;
   padding: 10px;
   border-radius: 26px;
@@ -51,7 +51,7 @@ nav {
   position: relative;
 }
 .icons .cart svg {
-  color: #f55050;
+  color: #ff8d11;
   font-size: 25px;
   transform: rotate(-14deg);
 }
@@ -65,7 +65,7 @@ nav {
   height: 20px;
   text-align: center;
   line-height: 17px;
-  color: #f55050;
+  color: #ff8d11;
 }
 .search-container {
   background: #fff;
@@ -94,7 +94,7 @@ nav {
   }
 }
 .search-container svg {
-  color: #84a49f;
+  color: #205375;
 }
 .search-container:hover > .search-input {
   width: 100px;
@@ -108,10 +108,10 @@ nav {
   font-weight: 500;
   font-size: 16px;
   transition: 0.8s;
-  color: #5cbdbb;
+  color: #205375;
 }
 .search-container .search-btn .fas {
-  color: #5cbdbb;
+  color: #205375;
 }
 
 @keyframes hoverShake {

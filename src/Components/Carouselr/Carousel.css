@@ -1,5 +1,6 @@
 .carousel .carousel-item img {
-  height: 600px;
+  height: 1080px;
+  width: 1920px;
   user-select: none;
   max-width: 100%;
 }
@@ -42,7 +43,7 @@
 
 .carousel-control-prev,
 .carousel-control-next {
-  background-color: blue !important;
+  background-color: #205375 !important;
   height: 50px !important;
   width: 50px !important;
   text-align: center !important;

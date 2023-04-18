@@ -11,7 +11,7 @@
   content: "";
   width: 0;
   height: 4px;
-  background-color: #86a3b8;
+  background-color: #205375;
   bottom: 0px;
   left: 50%;
   transform: translateX(-50%);
@@ -35,7 +35,7 @@
 }
 .beneficiaries .icon svg {
   font-size: 8rem !important;
-  color: #6cf1c4;
+  color: #205375;
   margin: 15px 0;
 }
 .beneficiaries .icon .text {

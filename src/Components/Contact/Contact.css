@@ -27,8 +27,8 @@
   transition: 0.3s;
 }
 .links li:hover {
-  border-right-color: #f48484;
-  border-left-color: #f48484;
+  border-right-color: #ff8d11;
+  border-left-color: #ff8d11;
 }
 .links li a {
   text-decoration: none;
@@ -48,7 +48,7 @@
   cursor: pointer;
 }
 .iconsbank svg:hover {
-  color: #86a3b8;
+  color: #205375;
 }
 @media only screen and (max-width: 500px) {
   .more {

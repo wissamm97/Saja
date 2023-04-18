@@ -37,7 +37,11 @@ function CardCase({ cases }) {
               />
               <div className="progressbar">
                 <span> المتبقي{item.maxamount}</span>
-                <ProgressBar animated now={item.maxamount} />
+                <ProgressBar
+                  animated
+                  now={item.maxamount}
+                  style={{ backgroundColor: "#205375" }}
+                />
               </div>
               <Card.Body style={{ marginTop: "-37px" }}>
                 <Card.Text>{item.details}</Card.Text>
@@ -60,18 +64,18 @@ function CardCase({ cases }) {
                         type="number"
                         name="amount"
                         id="amount"
-                        value={item.amount}
                         placeholder="أضف مبلغ للتبرع"
                         onChange={(e) => {
-                          const value = e.target.value;
-                          Object.preventExtensions(item);
-                          handelAmount(item, value);
+                          setAmountNew(e.target.value);
                         }}
                       />
                     </form>
                   </li>
                   <li>
-                    <button onClick={() => dispatch(addToCart(item))}>
+                    <button
+                      disabled={amountnew === 0}
+                      onClick={() => dispatch(addToCart(item))}
+                    >
                       تبرع الأن
                     </button>
                   </li>
@@ -79,7 +83,7 @@ function CardCase({ cases }) {
                     <Button
                       style={{ backgroundColor: "snow" }}
                       className="cart"
-                      disabled={amountnew.length == 0}
+                      disabled={amountnew === 0}
                     >
                       <FaCartPlus />
                     </Button>

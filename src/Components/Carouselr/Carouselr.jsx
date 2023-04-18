@@ -6,25 +6,25 @@ function NewCarouselr() {
     <>
       <Carousel>
         <Carousel.Item>
-          <img className="d-block w-100" src="./logo.jpg" alt="First slide" />
-          <Carousel.Caption style={{ zIndex: "9999" }}>
+          <img className="d-block w-100" src="./C1.jpg" alt="First slide" />
+          {/* <Carousel.Caption style={{ zIndex: "9999" }}>
             <p>#تبرعك_سجى</p>
             <a href="#"> تعرف على المزيد</a>
-          </Carousel.Caption>
+          </Carousel.Caption> */}
         </Carousel.Item>
         <Carousel.Item>
-          <img className="d-block w-100" src="./logo.jpg" alt="First slide" />
-          <Carousel.Caption style={{ zIndex: "9999" }}>
+          <img className="d-block w-100" src="./C2.jpg" alt="First slide" />
+          {/* <Carousel.Caption style={{ zIndex: "9999" }}>
             <p>#تبرعك_سجى</p>
             <a href="#"> تعرف على المزيد</a>
-          </Carousel.Caption>
+          </Carousel.Caption> */}
         </Carousel.Item>
         <Carousel.Item>
-          <img className="d-block w-100" src="./logo.jpg" alt="First slide" />
-          <Carousel.Caption style={{ zIndex: "9999" }}>
+          <img className="d-block w-100" src="./C3.jpg" alt="First slide" />
+          {/* <Carousel.Caption style={{ zIndex: "9999" }}>
             <p>#تبرعك_سجى</p>
             <a href="#"> تعرف على المزيد</a>
-          </Carousel.Caption>
+          </Carousel.Caption> */}
         </Carousel.Item>
       </Carousel>
     </>

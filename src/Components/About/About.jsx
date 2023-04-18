@@ -26,7 +26,7 @@ function About() {
           تابعة لصندوق الوقف الصحي لتسهيل العلاج الخيري
         </h4>
       </section>
-      <Container>
+      {/* <Container>
         <Row>
           <Col>
             <article data-aos="fade-up" data-aos-delay="350">
@@ -77,12 +77,12 @@ function About() {
                 data-name="Polygon Copy 4"
                 d="M20,5.774a20,20,0,0,1,20,0l5.981,3.453a20,20,0,0,1,10,17.321v6.906a20,20,0,0,1-10,17.321L40,54.226a20,20,0,0,1-20,0l-5.981-3.453a20,20,0,0,1-10-17.321V26.547a20,20,0,0,1,10-17.321Z"
                 transform="matrix(-0.259, -0.966, 0.966, -0.259, 11.5, 68.802)"
-                fill="#86a3b8"
+                fill="#205375"
               />
             </svg>
           </div>
         </Row>
-      </Container>
+      </Container> */}
     </Container>
   );
 }
