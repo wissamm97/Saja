@@ -27,12 +27,6 @@ function Cases() {
   }, []);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const btn = useRef();
-  const full = useRef();
-  const handelClick = (e, el) => {
-    e.current.classList.toggle("disabled");
-    el.current.classList.toggle("disabled");
-  };
   const { cases } = useSelector((state) => state.cases);
   const newArray = cases.filter((cas) => {
     return cas.casescompleted == false ? cas : "";
@@ -161,29 +155,6 @@ function Cases() {
                 <FaSearch /> بحث
               </Link>
             </div>
-            <div className="btn-case">
-              <button
-                onClick={() => {
-                  handelClick(btn, full);
-                  navigate("/allcases");
-                }}
-                ref={btn}
-                className="case disabled"
-              >
-                الحالات المتوفر
-              </button>
-              <button
-                ref={full}
-                onClick={() => {
-                  handelClick(full, btn);
-                  navigate("/casecompleted");
-                }}
-                className="case "
-                // style={{ textDecoration: "none" }}
-              >
-                الحالات المكتملة
-              </button>
-            </div>
           </form>
         </section>
         <Row>
@@ -252,6 +223,7 @@ function Cases() {
           ))}
           <div className="pagination">
             <Button
+              style={{ backgroundColor: "#205375" }}
               disabled={currentPage === 1}
               className="page prev"
               onClick={() => setCurrentPage((prev) => prev - 1)}
@@ -268,6 +240,7 @@ function Cases() {
               </div>
             ))}
             <Button
+              style={{ backgroundColor: "#205375" }}
               disabled={currentPage === page}
               className="page next"
               onClick={() => setCurrentPage((prev) => prev + 1)}
