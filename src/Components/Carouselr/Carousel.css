@@ -1,6 +1,5 @@
 .carousel .carousel-item img {
-  height: 1080px;
-  width: 1920px;
+  height: 600px;
   user-select: none;
   max-width: 100%;
 }
