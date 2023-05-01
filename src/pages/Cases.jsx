@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
-import { getAllCases, replce, setValue } from "../features/caseSlice";
+import { getAllCases, setAmount } from "../features/caseSlice";
+import { setDonation } from "../features/cartSlice";
 import { useEffect, useRef, useState } from "react";
 import Card from "react-bootstrap/Card";
 import { Button, Col, Container, Row } from "react-bootstrap";
@@ -12,7 +13,7 @@ import {
   FaArrowRight,
   FaSearch,
 } from "react-icons/fa";
-import { useParams, useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import { FiMapPin } from "react-icons/fi";
 import { addToCart } from "../features/cartSlice";
@@ -27,7 +28,16 @@ function Cases() {
   }, []);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { cases } = useSelector((state) => state.cases);
+  const btn = useRef();
+  const full = useRef();
+  const handelClick = (e, el) => {
+    e.current.classList.toggle("disabled");
+    el.current.classList.toggle("disabled");
+  };
+  ///
+
+  const cases = useSelector((state) => state.cases.cases);
+  const [amount, SetAmount] = useState(0);
   const newArray = cases.filter((cas) => {
     return cas.casescompleted == false ? cas : "";
   });
@@ -66,20 +76,7 @@ function Cases() {
   const startIndex = (currentPage - 1) * product_page;
   const lastIndex = currentPage * product_page;
   const orderedProduct = newArray.slice(startIndex, lastIndex);
-  Object.preventExtensions(cases);
-  const handelAmount = (ele, value) => {
-    // console.log(ele.amount + +value , 'ele');
-    // console.log(+value , 'value');
-    // console.log(ele , 'newEle');
-    const newValue = +value;
-    console.log(ele);
-    console.log(Object.preventExtensions(ele));
-    console.log(ele.amount + +value);
-    console.log(ele.amount + newValue);
-    console.log(ele);
-    // ele.newamount = "5000";
-    // console.log(ele);
-  };
+
   return (
     <>
       <Container>
@@ -155,6 +152,29 @@ function Cases() {
                 <FaSearch /> بحث
               </Link>
             </div>
+            <div className="btn-case">
+              <button
+                onClick={() => {
+                  handelClick(btn, full);
+                  navigate("/allcases");
+                }}
+                ref={btn}
+                className="case disabled"
+              >
+                الحالات المتوفر
+              </button>
+              <button
+                ref={full}
+                onClick={() => {
+                  handelClick(full, btn);
+                  navigate("/casecompleted");
+                }}
+                className="case "
+                // style={{ textDecoration: "none" }}
+              >
+                الحالات المكتملة
+              </button>
+            </div>
           </form>
         </section>
         <Row>
@@ -189,27 +209,30 @@ function Cases() {
                     <span className="code-case">{item.codeCase}</span>
                   </ul>
                   <ul className="donta-card-cse">
-                    <li>
-                      <input
-                        type="number"
-                        name=""
-                        id=""
-                        placeholder="أضف مبلغ للتبرع"
-                        onChange={(e) => {
-                          dispatch(setValue(e.target.value));
-                          dispatch(replce(item));
-                          console.log(item);
-                        }}
-                      />
-                    </li>
-                    <li>
-                      <button onClick={() => dispatch(addToCart(item))}>
-                        تبرع الأن
-                      </button>
-                    </li>
-                    <li>
-                      <FaCartPlus />
-                    </li>
+                    <form
+                      onSubmit={handelSubmit}
+                      style={{ display: "flex", gap: "10px" }}
+                    >
+                      <li>
+                        <input
+                          type="number"
+                          name="amount"
+                          id="amount"
+                          placeholder="أضف مبلغ للتبرع"
+                          onChange={(e) => SetAmount(e.target.value)}
+                          onKeyUp={() => dispatch(setDonation(amount))}
+                          required
+                        />
+                      </li>
+                      <li>
+                        <button onClick={() => dispatch(addToCart(item))}>
+                          تبرع الأن
+                        </button>
+                      </li>
+                      <li>
+                        <FaCartPlus />
+                      </li>
+                    </form>
                   </ul>
                   <div className="card-case-ic">
                     <span>شارك</span>
@@ -223,7 +246,6 @@ function Cases() {
           ))}
           <div className="pagination">
             <Button
-              style={{ backgroundColor: "#205375" }}
               disabled={currentPage === 1}
               className="page prev"
               onClick={() => setCurrentPage((prev) => prev - 1)}
@@ -240,7 +262,6 @@ function Cases() {
               </div>
             ))}
             <Button
-              style={{ backgroundColor: "#205375" }}
               disabled={currentPage === page}
               className="page next"
               onClick={() => setCurrentPage((prev) => prev + 1)}

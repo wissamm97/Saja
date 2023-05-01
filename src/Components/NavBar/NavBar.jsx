@@ -60,7 +60,7 @@ function NavBar() {
           </Nav>
         </Navbar.Collapse>
         <div className="icons">
-          <div className="search-container">
+          {/* <div className="search-container">
             <input
               type="text"
               name="search"
@@ -73,14 +73,14 @@ function NavBar() {
             <Link to='/allcases/sreach' state={{code:codeState}} href="#" className="search-btn">
               <FaSearch />
             </Link>
-          </div>
-          <Link
+          </div> */}
+          {/* <Link
             style={{ textDecoration: "none" }}
             className="login"
             to="/Login"
           >
             <FiLogIn /> تسجيل الدخول
-          </Link>
+          </Link> */}
           <Link to="cart" className="cart">
             <span>{cart.length}</span>
             <FaShoppingCart />

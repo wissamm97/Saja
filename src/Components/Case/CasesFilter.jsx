@@ -15,6 +15,7 @@ import {
   FaSearch,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { addToCart, setDonation } from "../../features/cartSlice";
 function CasesFilter(props) {
   const loction = useLocation();
   const [search, setSearch] = useState("");
@@ -53,6 +54,10 @@ function CasesFilter(props) {
   const arraycharity = getcharity.filter((value, index) => {
     return getcharity.indexOf(value) === index;
   });
+  const handelSubmit = (e) => {
+    e.preventDefault();
+  };
+  const [amount, SetAmount] = useState(0);
   return (
     <Container>
       <section className="filter-search">
@@ -144,7 +149,7 @@ function CasesFilter(props) {
                   style={{ borderRadius: "10px" }}
                 />
                 <div className="progressbar">
-                <span> المتبقي{item.maxamount}</span>
+                  <span> المتبقي{item.maxamount}</span>
                   <ProgressBar animated now={item.maxamount} />
                 </div>
                 <Card.Body style={{ marginTop: "-37px" }}>
@@ -162,20 +167,30 @@ function CasesFilter(props) {
                     <span className="code-case">{item.codeCase}</span>
                   </ul>
                   <ul className="donta-card-cse">
-                    <li>
-                      <input
-                        type="number"
-                        name=""
-                        id=""
-                        placeholder="أضف مبلغ للتبرع"
-                      />
-                    </li>
-                    <li>
-                      <button>تبرع الأن</button>
-                    </li>
-                    <li>
-                      <FaCartPlus />
-                    </li>
+                    <form
+                      onSubmit={handelSubmit}
+                      style={{ display: "flex", gap: "10px" }}
+                    >
+                      <li>
+                        <input
+                          type="number"
+                          name="amount"
+                          id="amount"
+                          placeholder="أضف مبلغ للتبرع"
+                          onChange={(e) => SetAmount(e.target.value)}
+                          onKeyUp={() => dispatch(setDonation(amount))}
+                          required
+                        />
+                      </li>
+                      <li>
+                        <button onClick={() => dispatch(addToCart(item))}>
+                          تبرع الأن
+                        </button>
+                      </li>
+                      <li>
+                        <FaCartPlus />
+                      </li>
+                    </form>
                   </ul>
                   <div className="card-case-ic">
                     <span>شارك</span>

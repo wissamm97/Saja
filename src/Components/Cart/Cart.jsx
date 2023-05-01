@@ -3,6 +3,7 @@ import "./Cart.css";
 import { useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { clear, deleteFromCart } from "../../features/cartSlice";
+import PayPalCheckoutButton from "./../PayPalCheckoutButton/PayPalCheckoutButton";
 import {
   FaShoppingCart,
   FaCcMastercard,
@@ -14,16 +15,21 @@ import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 function Cart() {
   const dispatch = useDispatch();
-  const cart = useSelector((state) => state.cart);
+  const { cases } = useSelector((state) => state.cart);
   const check = useRef();
   const show = useRef();
   const handelChange = (e) => {
     e.current.classList.toggle("show");
   };
-  const TotalAmount = cart.reduce((acc, cases) => {
-    acc += cases.amount;
-    return acc;
-  }, 0);
+  const TotalAmount =
+    cases &&
+    cases.reduce((acc, cases) => {
+      acc += +cases.amount;
+      return acc;
+    }, 0);
+  const handleDelete = (itemId) => {
+    dispatch(deleteFromCart(itemId));
+  };
   return (
     <Container className="text-center">
       <section
@@ -39,23 +45,21 @@ function Cart() {
           <div className="donat">
             <div className="donat-title">
               <h4>مجموع التبرع</h4>
-                <span>{TotalAmount.toFixed(2)} ر.س</span>
+              <span>{TotalAmount} ر.س</span>
             </div>
 
-            {cart.map((el) => (
-              <div className="cart-item" key={el.id}>
-                <p className="title">{el.category}</p>
-                <div className="details">
-                  <p>{el.details}</p>
-                  <span
-                    onClick={() => dispatch(deleteFromCart(el))}
-                    className="close"
-                  >
-                    <IoIosClose />
-                  </span>
+            {cases &&
+              cases.map((el) => (
+                <div className="cart-item" key={el.id}>
+                  <p className="title">{el.category}</p>
+                  <div className="details">
+                    <p>{el.details}</p>
+                    <span onClick={() => handleDelete(el.id)} className="close">
+                      <IoIosClose />
+                    </span>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
 
             <div className="donat-check">
               <form>
@@ -103,28 +107,12 @@ function Cart() {
               //   value={phonenumber}
             />
           </div>
-          <div className="input-register">
-            <label htmlFor="phonenumber">
-              {" "}
-              <span style={{ display: "inline", color: "red" }}>*</span>نوع
-              البطاقة
-            </label>
-            <div className="inputradio">
-              <input type="radio" name="bank" id="bankmaster" />
-              <label htmlFor="bankmaster">
-                <FaCcMastercard />
-              </label>
-              <input type="radio" name="bank" id="bankpaypal" />
-              <label htmlFor="bankpaypal">
-                <FaPaypal />
-              </label>
-            </div>
+          <div
+            className="input-register"
+            style={{ width: "50%", border: "none" }}
+          >
+            <PayPalCheckoutButton TotalAmount={TotalAmount} />
           </div>
-
-          <button className="send-gift">
-            <FaMoneyBillAlt />
-            تبرع الآن
-          </button>
         </Col>
       </Row>
     </Container>

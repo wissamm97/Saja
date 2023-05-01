@@ -8,8 +8,8 @@
         "charity": "معن",
         "codeCase": "8899",
         "casescompleted": false,
-        "maxamount": 500,
-        "amount":5555
+        "maxamount": 500
+        
     },
     {
         "id": 2,
@@ -20,8 +20,7 @@
         "charity": "معن",
         "codeCase": "5566",
         "casescompleted": false,
-        "maxamount": 2000,
-        "amount":0
+        "maxamount": 2000
     },
     {
         "id": 3,
@@ -32,8 +31,7 @@
         "charity": "الهلال الأحمر",
         "codeCase": "8899",
         "casescompleted": false,
-        "maxamount": 3000,
-        "amount":0
+        "maxamount": 3000
     },
     {
         "id": 4,
@@ -44,8 +42,7 @@
         "charity": "الهلال الأحمر",
         "codeCase": "2345",
         "casescompleted": false,
-        "maxamount": 4000,
-        "amount":0
+        "maxamount": 4000
     },
     {
         "id": 5,
@@ -56,8 +53,7 @@
         "charity": "الصليب الأحمر",
         "codeCase": "5544",
         "casescompleted": false,
-        "maxamount": 5000,
-        "amount":0
+        "maxamount": 5000
     },
     {
         "id": 6,
@@ -68,8 +64,7 @@
         "charity": "الصليب الأحمر",
         "codeCase": "7799",
         "casescompleted": false,
-        "maxamount": 6000,
-        "amount":0
+        "maxamount": 6000
     },
     {
         "id": 7,
@@ -80,8 +75,7 @@
         "charity": "الصليب الأحمر",
         "codeCase": "5246",
         "casescompleted": false,
-        "maxamount": 7000,
-        "amount":0
+        "maxamount": 7000
     },
     {
         "id": 8,
@@ -92,8 +86,7 @@
         "charity": "الصليب الأحمر",
         "codeCase": "2323",
         "casescompleted": false,
-        "maxamount": 8000,
-        "amount":0
+        "maxamount": 8000
     },
     {
         "id": 9,
@@ -104,8 +97,7 @@
         "charity": "معن",
         "codeCase": "1313",
         "casescompleted": false,
-        "maxamount": 9000,
-        "amount":0
+        "maxamount": 9000
     },
     {
         "id": 10,
@@ -116,8 +108,7 @@
         "charity": "معن",
         "codeCase": "1313",
         "casescompleted": true,
-        "maxamount": 0,
-        "amount":0
+        "maxamount": 0
     },
     {
         "id": 11,
@@ -128,8 +119,7 @@
         "charity": "معن",
         "codeCase": "1212",
         "casescompleted": true,
-        "maxamount": 0,
-        "amount":0
+        "maxamount": 0
     },
     {
         "id": 12,
@@ -140,8 +130,7 @@
         "charity": "معن",
         "codeCase": "1212",
         "casescompleted": true,
-        "maxamount": 0,
-        "amount":0
+        "maxamount": 0
     },
     {
         "id": 13,
@@ -152,8 +141,7 @@
         "charity": "معن",
         "codeCase": "1212",
         "casescompleted": true,
-        "maxamount": 0,
-        "amount":0
+        "maxamount": 0
     },
     {
         "id": 14,
@@ -164,8 +152,7 @@
         "charity": "معن",
         "codeCase": "1212",
         "casescompleted": true,
-        "maxamount": 0,
-        "amount":0
+        "maxamount": 0
     },
     {
         "id": 15,

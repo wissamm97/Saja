@@ -7,7 +7,7 @@ import { FaFacebook, FaTwitter, FaWhatsapp, FaCartPlus } from "react-icons/fa";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import { FiMapPin } from "react-icons/fi";
 import { Link } from "react-router-dom";
-import { addToCart, updateObject } from "../../features/cartSlice";
+import { addToCart, setDonation, updateObject } from "../../features/cartSlice";
 
 function CardCase({ cases }) {
   const [amountnew, setAmountNew] = useState(0);
@@ -17,9 +17,10 @@ function CardCase({ cases }) {
     // ele.city = "New York";
     // console.log(ele);
   };
-  const Submite = (e) => {
+  const handelSubmit = (e) => {
     e.preventDefault();
   };
+  const [amount, SetAmount] = useState(0);
   return (
     <>
       <Row>
@@ -58,37 +59,31 @@ function CardCase({ cases }) {
                   <span className="code-case">{item.codeCase}</span>
                 </ul>
                 <ul className="donta-card-cse">
-                  <li>
-                    <form onSubmit={Submite}>
-                      <input
-                        type="number"
-                        name="amount"
-                        id="amount"
-                        placeholder="أضف مبلغ للتبرع"
-                        onChange={(e) => {
-                          setAmountNew(e.target.value);
-                        }}
-                      />
+                    <form
+                      onSubmit={handelSubmit}
+                      style={{ display: "flex", gap: "10px" }}
+                    >
+                      <li>
+                        <input
+                          type="number"
+                          name="amount"
+                          id="amount"
+                          placeholder="أضف مبلغ للتبرع"
+                          onChange={(e) => SetAmount(e.target.value)}
+                          onKeyUp={() => dispatch(setDonation(amount))}
+                          required
+                        />
+                      </li>
+                      <li>
+                        <button onClick={() => dispatch(addToCart(item))}>
+                          تبرع الأن
+                        </button>
+                      </li>
+                      <li>
+                        <FaCartPlus />
+                      </li>
                     </form>
-                  </li>
-                  <li>
-                    <button
-                      disabled={amountnew === 0}
-                      onClick={() => dispatch(addToCart(item))}
-                    >
-                      تبرع الأن
-                    </button>
-                  </li>
-                  <li>
-                    <Button
-                      style={{ backgroundColor: "snow" }}
-                      className="cart"
-                      disabled={amountnew === 0}
-                    >
-                      <FaCartPlus />
-                    </Button>
-                  </li>
-                </ul>
+                  </ul>
                 <div className="card-case-ic">
                   <span>شارك</span>
                   <FaFacebook />

@@ -4,6 +4,7 @@ import Donation from "./Components/Donation/Donation";
 import NavBar from "./Components/NavBar/NavBar";
 import Carouselr from "./Components/Carouselr/Carouselr";
 import { Routes, Route } from "react-router-dom";
+import { PayPalScriptProvider } from "@paypal/react-paypal-js";
 import Beneficiaries from "./Components/Beneficiaries/Beneficiaries";
 import About from "./Components/About/About";
 import Contact from "./Components/Contact/Contact";
@@ -19,33 +20,40 @@ import CasesFilter from "./Components/Case/CasesFilter";
 import Casecompleted from "./Components/Case/Casecompleted";
 function App() {
   return (
-    <div className="App">
-      <NavBar />
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <Carouselr />
-              <Donation />
-              <Case />
-              <About />
-              <Beneficiaries />
-            </>
-          }
-        />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/partners" element={<Partners />} />
-        <Route path="/aboutme" element={<AboutMe />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route  path="/allcases"  element={<Cases />} />
-        <Route  path="/casecompleted"  element={<Casecompleted />} />
-        <Route path="/allcases/sreach" element={<CasesFilter />} />
-      </Routes>
-      <Contact />
-      <Footer />
-    </div>
+    <PayPalScriptProvider
+      options={{
+        "client-id":
+          "AWXPmOR2CV0sZ_X2Hb16enJ47iIBiMfLCPazVf6AT0qE0xzCrMj3xXHFNaFtvYvRBv9QmJrkkVBZa6PQ",
+      }}
+    >
+      <div className="App">
+        <NavBar />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Carouselr />
+                <Donation />
+                <Case />
+                <About />
+                <Beneficiaries />
+              </>
+            }
+          />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/partners" element={<Partners />} />
+          <Route path="/aboutme" element={<AboutMe />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/allcases" element={<Cases />} />
+          <Route path="/casecompleted" element={<Casecompleted />} />
+          <Route path="/allcases/sreach" element={<CasesFilter />} />
+        </Routes>
+        <Contact />
+        <Footer />
+      </div>
+    </PayPalScriptProvider>
   );
 }
 
