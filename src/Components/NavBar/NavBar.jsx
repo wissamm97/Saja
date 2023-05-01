@@ -9,7 +9,7 @@ import "./NavBar.css";
 function NavBar() {
   const navigate = useNavigate();
   const [codeState, setCodeState] = useState("");
-  const cart = useSelector((state) => state.cart);
+  const { cases } = useSelector((state) => state.cart);
   console.log(codeState);
   const handelRout = (value) => {
     if (value.length > 0) {
@@ -82,7 +82,7 @@ function NavBar() {
             <FiLogIn /> تسجيل الدخول
           </Link> */}
           <Link to="cart" className="cart">
-            <span>{cart.length}</span>
+          <span>{cases && cases.length}</span>
             <FaShoppingCart />
           </Link>
         </div>
