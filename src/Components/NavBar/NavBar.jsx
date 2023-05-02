@@ -27,7 +27,7 @@ function NavBar() {
         <Navbar.Brand>
           <Link to="/">
             <img
-              src="./logotab.jpg"
+              src="./logotab.png"
               alt="logo"
               style={{ height: "100px", borderRadius: "50%" }}
             ></img>
